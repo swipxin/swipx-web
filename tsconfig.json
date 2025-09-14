@@ -20,6 +20,19 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    {
+  "compilerOptions": {
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "vite.config.ts"]
+}
+
+
     /* Path mapping */
     "baseUrl": ".",
     "paths": {
