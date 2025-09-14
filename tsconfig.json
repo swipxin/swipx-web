@@ -4,10 +4,9 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
+    "moduleResolution": "node",
     "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
+    "esModuleInterop": true,
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -20,26 +19,16 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    {
-  "compilerOptions": {
-    "outDir": "dist",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "skipLibCheck": true
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "vite.config.ts"]
-}
-
-
     /* Path mapping */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+
+    /* Output dir for tsc (optional, but clean) */
+    "outDir": "dist"
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["src", "vite.config.ts"],
   "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
