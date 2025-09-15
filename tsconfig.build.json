@@ -2,20 +2,24 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "noEmit": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "components/**/*.ts",
-    "components/**/*.tsx",
-    "App.tsx"
+    "components/**/*.tsx", 
+    "App.tsx",
+    "types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "vite.config.ts",
-    "postcss.config.js",
+    "postcss.config.js", 
     "tailwind.config.js",
     "nextjs/**/*",
     "**/*.test.ts",

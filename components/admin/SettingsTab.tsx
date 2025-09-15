@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Input } from '../ui/input';
 import { Card } from '../ui/card';
 import { Switch } from '../ui/switch';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { INITIAL_SETTINGS } from './constants';
 import type { AdminSettings } from './types';
 
 export function SettingsTab() {
   const [settings, setSettings] = useState<AdminSettings>(INITIAL_SETTINGS);
 
-  const updateSettings = (key: keyof AdminSettings, value: any) => {
+  const updateSettings = (key: keyof AdminSettings, value: string | number | boolean) => {
     setSettings(prev => ({ ...prev, [key]: value }));
     toast.success('Settings updated');
   };
@@ -28,7 +28,7 @@ export function SettingsTab() {
             </div>
             <Switch
               checked={settings.freeModeEnabled}
-              onCheckedChange={(value) => updateSettings('freeModeEnabled', value)}
+              onCheckedChange={(value: boolean) => updateSettings('freeModeEnabled', value)}
             />
           </div>
 

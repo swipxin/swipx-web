@@ -1,51 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Onboarding } from './components/Onboarding';
-import { Auth } from './components/Auth';
-import { Home } from './components/Home';
-import { CountrySelect } from './components/CountrySelect';
-import { GenderSelect } from './components/GenderSelect';
-import { Matching } from './components/Matching';
-import { VideoCall } from './components/VideoCall';
-import { Wallet } from './components/Wallet';
-import { Plans } from './components/Plans';
-import { Settings } from './components/Settings';
-import { Admin } from './components/Admin';
-import { Toaster } from './components/ui/sonner';
+import { Onboarding } from './components/Onboarding.tsx';
+import { Auth } from './components/Auth.tsx';
+import { Home } from './components/Home.tsx';
+import { CountrySelect } from './components/CountrySelect.tsx';
+import { GenderSelect } from './components/GenderSelect.tsx';
+import { Matching } from './components/Matching.tsx';
+import { VideoCall } from './components/VideoCall.tsx';
+import { Wallet } from './components/Wallet.tsx';
+import { Plans } from './components/Plans.tsx';
+import { Settings } from './components/Settings.tsx';
+import { Admin } from './components/Admin.tsx';
+import { Toaster } from './components/ui/sonner.tsx';
 
-export type Screen = 
-  | 'onboarding' 
-  | 'auth' 
-  | 'home' 
-  | 'country-select' 
-  | 'gender-select' 
-  | 'matching' 
-  | 'video-call' 
-  | 'wallet' 
-  | 'plans' 
-  | 'settings' 
-  | 'admin';
-
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  country: string;
-  gender: 'male' | 'female' | 'other' | null;
-  isPremium: boolean;
-  tokens: number;
-}
-
-export interface AppState {
-  currentScreen: Screen;
-  user: User | null;
-  isAuthenticated: boolean;
-  hasSeenOnboarding: boolean;
-  selectedCountry: string | null;
-  selectedGender: 'male' | 'female' | 'other' | null;
-  isInCall: boolean;
-  callDuration: number;
-  isDarkMode: boolean;
-}
+import type { Screen, User, AppState } from './types/index.ts';
 
 export default function App() {
   const [state, setState] = useState<AppState>({
@@ -149,7 +116,7 @@ export default function App() {
         return (
           <CountrySelect
             selectedCountry={state.selectedCountry}
-            onSelect={(country) => setState(prev => ({ ...prev, selectedCountry: country }))}
+            onSelect={(country: string) => setState(prev => ({ ...prev, selectedCountry: country }))}
             navigateTo={navigateTo}
           />
         );
@@ -157,7 +124,7 @@ export default function App() {
         return (
           <GenderSelect
             selectedGender={state.selectedGender}
-            onSelect={(gender) => setState(prev => ({ ...prev, selectedGender: gender }))}
+            onSelect={(gender: 'male' | 'female' | 'other' | null) => setState(prev => ({ ...prev, selectedGender: gender }))}
             navigateTo={navigateTo}
           />
         );
@@ -177,7 +144,7 @@ export default function App() {
             updateUser={updateUser}
             navigateTo={navigateTo}
             callDuration={state.callDuration}
-            onDurationUpdate={(duration) => setState(prev => ({ ...prev, callDuration: duration }))}
+            onDurationUpdate={(duration: number) => setState(prev => ({ ...prev, callDuration: duration }))}
           />
         );
       case 'wallet':

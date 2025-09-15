@@ -11,7 +11,6 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "@daily-co/daily-js": "^0.66.0",
     "@hookform/resolvers": "^3.1.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.4",
@@ -19,6 +18,7 @@
     "@radix-ui/react-avatar": "^1.0.3",
     "@radix-ui/react-checkbox": "^1.0.4",
     "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-context-menu": "^2.2.16",
     "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-dropdown-menu": "^2.0.5",
     "@radix-ui/react-hover-card": "^1.0.6",
@@ -53,12 +53,13 @@
     "react-hook-form": "7.55.0",
     "react-resizable-panels": "^0.0.55",
     "recharts": "^2.7.2",
-    "sonner": "2.0.3",
+    "sonner": "^2.0.3",
     "tailwind-merge": "^1.14.0",
     "vaul": "^0.7.0",
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
     "@types/facebook-js-sdk": "^3.3.11",
     "@types/js-cookie": "^3.0.6",
     "@types/react": "^18.2.15",
@@ -72,7 +73,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "postcss": "^8.4.27",
     "tailwindcss": "^4.0.0-alpha.25",
-    "typescript": "^5.9.2",
+    "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
 }

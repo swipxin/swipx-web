@@ -5,7 +5,7 @@ import { Card } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 import { Plus, UserX, UserCheck, Trash2 } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 import { INITIAL_PLANS } from './constants';
 import type { AdminPlan } from './types';
 
